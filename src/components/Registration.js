@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { getUser } from '../services/user';
+import { getUser, createUser } from '../services/user';
 import { getBlog } from '../services/blogs';
 
 function Registration() {
@@ -113,12 +113,8 @@ function Registration() {
   }
 
   else {
-    // display alert box with user
-    // 'name' and 'email' details .
-    //pass form values as object for processing
-    //formValues.username = username;
-
-    alert('Form successfully submitted');
+   //Process form values form registration
+    createUser(formValues).then(results=>console.log(results));
   }
 }
 
